@@ -6,6 +6,14 @@ import UIKit
 
 // Your function here
 
+func average(of input: [Double]) -> Double {
+    var sum = 0.0
+    for num in input {
+        sum += num
+    }
+    return sum / Double(input.count)
+}
+
 let testCasesOne: [([Double], Double)] = [
     (input: [1,2,3,4,5], expectedOutput: 3),
     (input: [1,42,1,541,42,6], expectedOutput: 105.5),
@@ -13,10 +21,10 @@ let testCasesOne: [([Double], Double)] = [
     (input: [1.5, 2.25, 4.5, -1.5], expectedOutput: 1.6875),
 ]
 
-//for (input, expectedOutput) in testCasesOne {
-//    let output = average(of: input)
-//    assert(output == expectedOutput, "Was expecting \(expectedOutput) for input \(input), but got \(output)")
-//}
+for (input, expectedOutput) in testCasesOne {
+    let output = average(of: input)
+    assert(output == expectedOutput, "Was expecting \(expectedOutput) for input \(input), but got \(output)")
+}
 
 // Question Two
 
